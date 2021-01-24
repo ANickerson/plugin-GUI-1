@@ -956,6 +956,7 @@ void WaveAxes::plotSpike(const SpikeEvent* s, Graphics& g)
 	//if (s.sortedId > 0)
     //   g.setColour(Colour(s.color[0],s.color[1],s.color[2]));
     //else
+	
        g.setColour(Colours::white);
 
     // type corresponds to channel so we need to calculate the starting
@@ -1286,7 +1287,7 @@ bool ProjectionAxes::updateSpikeData(const SpikeEvent* s)
     //if (s.sortedId > 0)
     //    col = Colour(s.color[0], s.color[1], s.color[2]);
     //else
-        col = Colours::white;
+        col = Colour::fromFloatRGBA(1.0f,1.0f,1.0f,0.3f) ;
 
 	const float* data = s->getDataPointer();
     updateProjectionImage(data[idx1], data[idx2], 1, col);
